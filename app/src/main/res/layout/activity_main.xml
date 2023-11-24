@@ -6,35 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/number_field"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/number"
-        android:textSize="60sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.251" />
-
-    <Button
-        android:id="@+id/minus_button"
-        android:layout_width="174dp"
-        android:layout_height="92dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="283dp"
-        android:layout_marginEnd="243dp"
-        android:layout_marginBottom="200dp"
-        android:rotationY="15"
-        android:text="@string/minusButtonText"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container_view"
+        android:name="com.example.ystu.fragment.CounterFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <Button
         android:id="@+id/second_screen"
@@ -52,23 +28,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/plus_button"
-        android:layout_width="174dp"
-        android:layout_height="92dp"
-        android:layout_marginStart="193dp"
-        android:layout_marginTop="283dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="200dp"
-        android:rotationY="-15"
-        android:text="@string/plusButtonText"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.392"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
