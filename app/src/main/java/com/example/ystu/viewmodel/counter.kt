@@ -25,20 +25,20 @@ class CounterViewModel(application: Application) : AndroidViewModel(application)
         counter.value = sharedPref.getInt("counter", 0)
     }
 
-    fun increment() {
+    fun increment(num: Int? = 1) {
         Handler().postDelayed(
             {
-                this.counter.value = this.counter.value?.plus(1)
+                this.counter.value = this.counter.value?.plus(num ?: 1)
 
                 this.counter.value?.let { this.updateCachedValue(it) }
             }, this.delay * 1000
         )
     }
 
-    fun decrement() {
+    fun decrement(num: Int? = 1) {
         Handler().postDelayed(
             {
-                this.counter.value = this.counter.value?.minus(1)
+                this.counter.value = this.counter.value?.minus(num ?: 1)
 
                 this.counter.value?.let { this.updateCachedValue(it) }
             }, this.delay * 1000

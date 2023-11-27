@@ -49,4 +49,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/number_field"
         app:layout_constraintVertical_bias="0.502" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="146dp"
+        android:ems="10"
+        android:hint="1"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/minus_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number_field" />
 </androidx.constraintlayout.widget.ConstraintLayout>

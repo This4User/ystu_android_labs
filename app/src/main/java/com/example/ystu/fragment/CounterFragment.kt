@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -26,6 +27,7 @@ class CounterFragment : Fragment(R.layout.fragment_counter) {
         val textView = inflatedView?.findViewById<TextView>(R.id.number_field)
         val minusButton = inflatedView?.findViewById<TextView>(R.id.minus_button)
         val plusButton = inflatedView?.findViewById<TextView>(R.id.plus_button)
+        val textField = inflatedView?.findViewById<EditText>(R.id.editTextNumber)
 
         val counterViewModel = ViewModelProvider(this)[CounterViewModel::class.java]
         counterViewModel.init()
@@ -39,10 +41,10 @@ class CounterFragment : Fragment(R.layout.fragment_counter) {
         textView?.text = counterViewModel.counter.value.toString()
 
         plusButton?.setOnClickListener {
-            counterViewModel.increment()
+            counterViewModel.increment(textField?.text.toString().toIntOrNull())
         }
         minusButton?.setOnClickListener {
-            counterViewModel.decrement()
+            counterViewModel.decrement(textField?.text.toString().toInt())
         }
 
         return inflatedView
