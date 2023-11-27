@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Handler
+import android.os.Looper
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 
@@ -26,23 +27,19 @@ class CounterViewModel(application: Application) : AndroidViewModel(application)
     }
 
     fun increment(num: Int? = 1) {
-        Handler().postDelayed(
-            {
-                this.counter.value = this.counter.value?.plus(num ?: 1)
+        Handler(Looper.getMainLooper()).postDelayed({
+            this.counter.value = this.counter.value?.plus(num ?: 1)
 
-                this.counter.value?.let { this.updateCachedValue(it) }
-            }, this.delay * 1000
-        )
+            this.counter.value?.let { this.updateCachedValue(it) }
+        }, this.delay * 1000)
     }
 
     fun decrement(num: Int? = 1) {
-        Handler().postDelayed(
-            {
-                this.counter.value = this.counter.value?.minus(num ?: 1)
+        Handler(Looper.getMainLooper()).postDelayed({
+            this.counter.value = this.counter.value?.minus(num ?: 1)
 
-                this.counter.value?.let { this.updateCachedValue(it) }
-            }, this.delay * 1000
-        )
+            this.counter.value?.let { this.updateCachedValue(it) }
+        }, this.delay * 1000)
     }
 
     private fun updateCachedValue(score: Int) {
