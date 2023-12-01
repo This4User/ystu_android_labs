@@ -1,7 +1,12 @@
 <resources>
-    <string name="app_name">ystu 2</string>
+    <string name="app_name">ystu 3</string>
     <string name="minusButtonText">Minus</string>
     <string name="plusButtonText">Plus</string>
     <string name="second_screen">Second Screen</string>
-    <string name="number">Number</string>>
+    <string name="number">Number</string>
+    <string name="retrofit_screen">Retrofit screen</string>
+    <string name="title_activity_retrofit">RetrofitActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="item">Item</string>>
 </resources>

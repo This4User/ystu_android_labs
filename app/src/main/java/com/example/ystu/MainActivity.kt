@@ -24,5 +24,11 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("counter", counterViewModel.counter.value.toString())
             startActivity(intent)
         }
+
+        binding.retforitScreen.setOnClickListener {
+            val intent = Intent(this, RetrofitActivity::class.java)
+
+            startActivity(intent)
+        }
     }
 }
